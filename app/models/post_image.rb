@@ -1,5 +1,4 @@
 class PostImage < ApplicationRecord
-  mount_uploader :image, ImageUploader
 
   # --------------------------------------
   # Relations
@@ -13,7 +12,6 @@ class PostImage < ApplicationRecord
   # Validations
   # --------------------------------------
   validates :shop_name, presence: true
-  validates :image, presence: true
 
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
